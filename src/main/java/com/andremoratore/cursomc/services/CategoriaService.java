@@ -2,6 +2,7 @@ package com.andremoratore.cursomc.services;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.andremoratore.cursomc.domain.Categoria;
 import com.andremoratore.cursomc.repositores.CategoriaRepository;
@@ -23,6 +24,11 @@ public class CategoriaService {
     	obj.setId(null);
     	return repo.save(obj);
     }
+    public Categoria update (Categoria obj) {
+    	find(obj.getId());
+    	return repo.save(obj);
+    }
+    
 	}
 	
 
